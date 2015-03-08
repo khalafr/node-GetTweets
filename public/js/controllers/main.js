@@ -11,7 +11,7 @@ angular.module('tweetController', [])
 
 			if($scope.formData.twitterId != undefined){
 				$scope.loading = true;
-				Tweets.request($scope.formData)
+				Tweets.request($scope.formData.twitterId)
 					.success(function(data){
 						$scope.loading = false;
 						$scope.formData = {};

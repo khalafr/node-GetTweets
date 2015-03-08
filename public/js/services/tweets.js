@@ -5,9 +5,9 @@ angular.module('tweetService', [])
 	.factory('Tweets', ['$http',function($http) {
 		
 		return {
-			get : function() {
+			get : function(twitterId) {
 				
-				return $http.get('/api/tweets');
+				return $http.get('/api/tweets', {params:{'user': twitterId}});
 			},
 
 			request: function(twitterId){

@@ -30,7 +30,10 @@ module.exports = function(app) {
 	app.post('/api/tweets', function(req, res) {
 		_getTweets(req.body.twitterId, res);
 	});
-	
+	//get tweets by passed user id parameter
+	app.get('/api/tweets', function(req, res) {
+		_getTweets(req.query.user, res);
+	});
 
 	// application -------------------------------------------------------------
 	app.get('*', function(req, res) {
